@@ -37,7 +37,7 @@ SE num >= 0 ENTAO
 		ESCREVA "O número é ímpar!"
 	FIM_SE
 SENAO
-	ESCREVA ""O número não é positivo!"
+	ESCREVA "O número não é positivo!"
 FIM_SE
 FIM
 ```
