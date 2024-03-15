@@ -94,6 +94,7 @@ F --LOOP--> E
 
 ## Lista de exercícios 03
 
+
 ### Exercício 01 (2.5 pontos)
 Atualize o algoritmo para determinar se um número inteiro e positivo é par ou ímpar, usando uma laço condicional para aceitar apenas números maiores ou iguais a zero. 
 
@@ -101,13 +102,31 @@ Atualize o algoritmo para determinar se um número inteiro e positivo é par ou 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite um número: }}
+B --> C[\n\]
+C --> D{n < 0}
+D --FALSE--> E[resto = n % 2]
+E --TRUE--> F{{O número é par!}}
+E --FALSE--> G{{O número é ímpar!}}
+D --TRUE--> H{{Digite um número positivo: }}
+H --> D
+F & G --> Z
+Z([FIM])
 ```
-
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
+Algoritmo ParImpar
+DECLARE n, resto: INTEIRO
+ESCREVA "Digite um número: "
+INICIO
+LEIA n
+SE n < 0 ENTAO
+	ENQUANTO n < 0 FAÇA
+		ESCREVA "Digite um número positivo: "
+	FIM_ENQUANTO
+SENAO
+
 FIM_ALGORITMO
 ```
 
