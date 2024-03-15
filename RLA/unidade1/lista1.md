@@ -1,51 +1,127 @@
 # UNIFOR
-**Nome**: Diego rai Silva Germano Ribeiro <br>
-**Disciplina**: Raciocinio lógico e algoritmo
+**Nome**: Diego Rai Silva Germano Ribeiro <br>
+**Disciplina**: Raciocínio lógico algorítmico
 
 ## Lista de exercícios 01
 
-### Exercício 3
+### Exercício 01 (1 ponto)
 Represente, em fluxograma e pseudocódigo, um algoritmo para determinar se um número inteiro e positivo é par ou impar.
 
-#### Fluxograma
+#### Fluxograma (0,25 ponto)
 
 ```mermaid
-flowchart TB
-A([INICIO]) --> B{{Digite um número: }}
-B --> C[/num/] 
-C --> D{num >= 0}
-D --FALSE--> E{{O Número deve ser positivo!}}
-E --> F([FIM])
-D --TRUE--> G[Resto = num % 2]
-G --> H{resto == 0}
-H --FALSE--> I{{O número é ímpar!}}
-H --TRUE--> J{{O número é par!}}
-I & J --> F
-```
-#### Pseudocódigo
-```
-ALGORITO verifica_par_impar
-DECLARE num, resto: INTEIRO
-INICIO
-ESCREVA "Digite um número: "
-LEIA num
-SE num >= 0 ENTAO
-	resto <- num % 2
-	SE resto == 0 ENTAO
-		ESCREVA "O número é par!"
-	SENAO
-		ESCREVA "O número é ímpar!"
-	FIM_SE
-SENAO
-	ESCREVA "O número não é positivo!"
-FIM_SE
-FIM
+flowchart TD
+A([INICIO]) --> B{{Digite um número:}}
+B --> C[\numero\]
+C --> D{numero >= 0}
+D --FALSE--> E[O número não é positivo!]
+D --TRUE--> F[resto = numero % 2]
+E --> Z([FIM])
+F --> G{resto == 0}
+G --FALSE--> H{{O número é impar!}}
+G --TRUE--> I{{O número é par!}}
+H --> Z
+I --> Z
 ```
 
-#### Teste
-| num | num >= 0 | resto | resto == 0 | Saída |
-| -- | -- | -- | -- | -- |
-| -1 | False | | | "O número deve ser positivo" |
-| 0 | True | 0 |True | "O número é par!" |
-| 10 | True | 0 | True | "O número é par!" |
-| 11 | True | 1 | False | "O número é ímpar!" |
+#### Pseudocódigo (0,5 ponto)
+```
+1  ALGORTIMO verifica_par_impar
+2  DECLARE numero, resto: INTEIRO
+3  ESCREVA "Digite um número: "
+4  INICIO
+4  LEIA numero
+5  SE numero >= 0 ENTAO                  // verifica se o inteiro é positivo
+6    resto = numero % 2                 // calcula o resto da divisão por 2
+7    SE resto == 0 ENTAO                // verifica se o resto é igual a zero
+8      ESCREVA "O número é par!"
+9    SENAO
+10     ESCREVA "O número é impar!"
+11   FIM_SE
+11  SENAO                                // caso inteiro for negativo (condição linha 5)
+12    ESCREVA "O número deve ser postivo!"
+13  FIM_SE
+13 FIM
+```
+
+#### Teste de mesa (0,25 ponto)
+| numero | numero >= 0 | resto | resto == 0 | Saída |
+| -- | -- | -- | -- | -- | 
+| -1 | F |   |   | "O número deve ser postivo!" |
+| 0  | V | 0 | V | "O número é par!" |
+| 13 | V | 1 | F | "O número é impar!" |
+| 30 | V | 0 | V | "O número é par!" |
+
+## Exercício 02 (3 pontos)
+Represente, em fluxograma e pseudocódigo, um algoritmo para calcular o novo salário de um funcionário. 
+Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 terão aumento de 20%; os demais terão aumento de 10%.
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo ContaAprovacoes
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (1.0 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+## Exercício 03 (3 pontos)
+Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
+
+#### Fluxograma (1 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1 ponto)
+
+```
+Algoritmo ContaAprovacoes
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (1 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+## Exercício 04 (3 pontos)
+Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. 
+Caso não atender a restrição de idade, calcular quantos anos faltam para o candidato estar apto.
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo ContaAprovacoes
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (1.0 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
