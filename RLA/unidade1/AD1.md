@@ -73,7 +73,17 @@ I --> J{{"b =", b}}
 ```
 Algoritmo TrocaValores
 INICIO
-...
+ALGORITMO TrocaValores
+DECLARE a, b, aux: REAL
+ESCREVA "Digite o valor da a: "
+LEIA a
+ESCREVA "Digite o valor da b: "
+LEIA b
+DECLARE "aux = a"
+DECLARE "a = b"
+DECLARE "b = aux"
+ESCREVA "a = , a"
+ESCREVA "b = , b"
 FIM
 ```
 
