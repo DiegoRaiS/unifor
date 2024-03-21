@@ -147,12 +147,23 @@ H --TRUE--> J[\cont =+ 1\]
 J --LOOP--> E
 ```
 
-#### Pseudocódigo 01 (1 ponto)
+#### Pseudocódigo 02 (1 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+ALGORITMO ContaAprovacoes
 INICIO
-...
+DECLARE n, cont, nota: INTEIRO
+ESCREVA "Digite o número de notas: "
+LEIA n
+DECLARE cont = 0
+PARA i = 1 ATE n PASSO 1 FACA
+	ESCREVA "Digite nota, i"
+	LEIA nota
+	SE nota >= 50 E nota <=100 ENTAO
+		DECLARE "cont =+ 1"
+	FIM_SE
+ESCREVA "Número de alunos aprovados: , cont"
+FIM_PARA
 FIM
 ```
 
