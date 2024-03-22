@@ -1,6 +1,6 @@
 <img src="https://drive.google.com/uc?id=1SOzRTjUt7cuBJpSqoK90fcAiKBrnpUJo" width="400">
 
-**Curso:** Engenhari da computação <br>
+**Curso:** Engenharia da computação <br>
 **Disciplina:** Lógica e algoritmo <br>
 **Código/Turma:** preencha com seus dados <br>
 **Professor:** Ricardo Carubbi <br>
