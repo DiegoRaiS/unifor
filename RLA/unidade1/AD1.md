@@ -79,9 +79,9 @@ ESCREVA "Digite o valor da a: "
 LEIA a
 ESCREVA "Digite o valor da b: "
 LEIA b
-DECLARE "aux = a"
-DECLARE "a = b"
-DECLARE "b = aux"
+aux = a
+a = b
+b = aux
 ESCREVA "a = , a"
 ESCREVA "b = , b"
 FIM
