@@ -124,19 +124,45 @@ Caso não atender a restrição de idade, calcular quantos anos faltam para o ca
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{"Digite a sua idade:"}}
+B --> C[/idade/]
+C --> D{idade < 0}
+D --FALSE--> E{idade >= 18}
+E --FALSE--> F[anos_apto = 18 - idade]
+F --> G{{Faltam, anos_apto, anos para o candidato estar apto!}}
+G --> H([FIM])
+E --TRUE--> I{{"O candidato está apto a tirar a CNH!"}}
+I --> H
+D --TRUE--> J{{"A idade deve ser maior que zero!"}}
+J --> H 
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+ALGORTIMO AptoCNH
+DECLARE idade, anos_apto: INTEIRO
+INICIO
+  ESCREVA ""Digite a sua idade:"
+  LEIA idade
+  SE idade < 0 ENTAO
+    ESCREVA "A idade deve ser maior que zero!"
+  SENAO
+    SE idade >= 18 ENTAO
+      ESCREVA "O candidato está apto a tirar a CNH!"
+    SENAO
+      anos_apto <- 18 - idade
+      ESCREVA "Faltam", anos_apto, "ano(s) para o candidato estar apto!"
+    FIM_SE
+  FIM_SE
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (1.0 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| idade | idade < 0 | idade >= 18 | anos_apto | saída                                         | 
+| --    | --        | --          | --        | --                                            | 
+| -1    | True      |             |           |                                               |
+| 0     | False     | False       | 18-0 = 18 | Faltam 18 ano(s) para o candidato estar apto! |
+| 17    | False     | False       | 18-17 = 1 | Faltam 1 ano(s) para o candidato estar apto!  |
+| 18    | False     | True        |           | O candidato está apto a tirar a CNH!          |
