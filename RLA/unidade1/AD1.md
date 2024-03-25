@@ -226,6 +226,25 @@ K --LOOP--> G
 ```
 Algoritmo SomaNumeros
 INICIO
+DECLARE n INTEIRO
+ESCREVA "Digite a quantidade de números: "
+LEIA n
+SE n >= 0
+	DECLARE soma = 0
+	DECLARE i = 1
+	LEIA n
+	SE i <= n
+		ESCREVA "Digite um número: "
+		DECLARE num
+		DECLARE soma = soma + num
+		DECLARE i = i + 1
+		REPITA_SE
+	SENAO
+		ESCREVA "A soma dos números é: " soma
+		FIM_SENAO
+SENAO
+	ESCREVA "O valor deve ser maior que zero!"
+FIM_SENAO
 ...
 FIM
 ```
