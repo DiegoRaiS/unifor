@@ -195,19 +195,50 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[/i = 0/]
+B --> C[/soma = 0/]
+C --> L{{Digite a nota do aluno: }}
+L --> D[/nota/]
+D --> E{nota  >= 0}
+E --FALSE--> FALSE["media ← soma / i "]
+FALSE --> M(['A média aritmética é :', media])
+M --> Ç{{'Foram lidas ', i , ' notas'.}}
+Ç --> Z([FIM])
+E --SIM--> NOTA["soma ← soma + nota"]
+NOTA --> I[i =+ 1]
+I --> F{{Digite a nota do aluno: }}
+F --> G[/nota/] 
+G --LOOP--> E
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
+ALGORITMO_Media
+DECLARE nota, media, i, soma: Int
+i = 0
+soma = 0
+ESCREVA "Digite a nota do aluno: "
+LEIA nota
+ENQUANTO nota >=0 FAÇA
+	soma ← soma + nota
+	i  =+ 1
+	ESCREVA "Digite a nota do aluno:"
+	LEIA nota
+FIM_ENQUANTO
+media ← soma / i
+ESCREVA "A média aritmética é :", media
+ESCREVA "Foram lidas ", i , " notas"
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| nota | SE nota >= 0 | soma ← soma + nota | i = + 1 | media ← soma / i  | SAÍDA 1 |SAÍDA 2
+|----------|----------|----------|----------|----------|----------|----------|
+|     5      |     V     |     5 ← 0 + 5     |    1      |          |
+|     2    |       V   |       7 ← 5 + 2   |      2    |         |
+|     3     |      V    |      10 ← 7 + 3    |     3     |          |
+|     10     |      V    |      20 ← 10 + 10    |     4     |          |
+|     8     |      V   |      28 ← 20 + 8    |     5    |         |
+|     -1     |      F    |          |         |   5.6 ← 28 / 5       |  "A média aritmética é : 5.6"        | "Foram lidas 5 notas"
