@@ -413,10 +413,20 @@ I --LOOP--> E
 
 #### Pseudocódigo (2 pontos)
 
-```
-Algoritmo GeraFibonacci
+```java
+ALGORITMO GeraFibonacci
+DECLARE n, a, b, termo_atual: INTEIRO
 INICIO
-...
+ESCREVA "Número de termos da série Fibonacci:"
+LEIA n
+a <- 0
+b <- 1
+PARA i DE 1 ATE n FAÇA
+	ESCREVA a
+	termo_atual <- a + b
+	a <- b
+	b <- termo_atual
+FIM_PARA
 FIM
 ```
 #### Teste de mesa
