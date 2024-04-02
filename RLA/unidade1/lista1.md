@@ -60,37 +60,40 @@ Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 ter�
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite o salário: }}
-B --> C[\sal\]
-C --> D{sal <= 500}
-D --TRUE--> E[novo_sal = sal * 1.2]
-D --FALSE--> F[novo_sal = sal * 1.1]
-E & F --> G{{O Novo salário é, novo_sal}}
+A([INICIO]) --> B{{"Digite seu salário atual:"}}
+B --> C[/sal_atual/]
+C --> D{sal_atual <= 500}
+D --FALSE--> E[sal_reaj = sal_atual * 1.1]
+D --TRUE--> F[sal_reaj = sal_atual * 1.2]
+E --> G{{O novo salário é, sal_reaj}}
+F --> G
 G --> H([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
-
 ```
-ALGORITMO NovoSalario
-DECLARE sal, novo_sal INTEIRO
+ALGORTIMO ReajusteSalario
+DECLARE sal_atual, sal_reaj: REAL
 INICIO
-ESCREVA "Digite o salário: "
-SE sal <= 500 ENTAO
-	CALCULAR novo_sal = sal * 1.2
+ESCREVA "Digite seu salário atual:"
+LEIA sal_atual
+SE sal_atual <= 500 ENTAO
+	sal_reaj = sal_atual * 1.2
 SENAO
-	CALCULAR novo_sal = sal * 1.1
+        sal_reaj = sal_atual * 1.1
 FIM_SE
-ESCREVA "O Novo salário é:, novo_sal"
-FIM_ALGORITMO
+ESCREVA "O novo salário é R$", sal_reaj
+
+FIM
 ```
 
 #### Teste de mesa (1.0 ponto)
 
-| sal | sal <=500 | novo_sal = sal * 1.2 | novo_sal = sal * 1.1 | novo_sal |
-| 500 |     V     |         600          |                      |   600    | 
-| 750 |     F     |                      |         825          |   825    | 
-| 100 |     V     |         120          |                      |   120    | 
+| sal_atual | sal_atual >= 500 |sal_reaj       | saída                   | 
+| --        | --               | --            | --                      | 
+| 400       | False            | 400*1.2 = 480 | O novo salário é R$ 480 |
+| 500       | True             | 500*1.2 = 600 | O novo salário é R$ 600 |
+| 600       | True             | 600*1.1 = 660 | O novo salário é R$ 660 |
 
 ## Exercício 03 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
