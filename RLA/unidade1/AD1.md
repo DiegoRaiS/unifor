@@ -155,7 +155,7 @@ INICIO
 DECLARE n, cont, nota: INTEIRO
 ESCREVA "Digite o número de notas: "
 LEIA n
-DECLARE cont = 0
+cont = 0
 PARA i = 1 ATE n PASSO 1 FACA
 	ESCREVA "Digite nota, i"
 	LEIA nota
@@ -296,7 +296,7 @@ I --LOOP--> E
 
 #### Pseudocódigo (1 ponto)
 
-```java
+```
 Algoritmo SomaSerie
 DECLARE n,numerador,denominador: INTEIRO; termo, S: REAL
 INICIO
@@ -355,9 +355,20 @@ H --> I
 #### Pseudocódigo (2 pontos)
 
 ```
-Algoritmo CalcFatorial
+ALGORITMO CalculoFatorial
+DECLARE n: INTEIRO
 INICIO
-...
+ESCREVA "Digite um numero inteiro nao-negativo:"
+LEIA n
+SE n >= 0 ENTAO
+	fator <- 1
+	PARA i DE 1 ATÉ n PASSO 1 FAÇA
+		fator <- fator * i        // fator *= i
+	FIM_PARA
+	ESCREVA "O fatorial de, n, é:", fator
+SENAO
+	ESCREVA "O valor deve ser maior ou igual a zero!"
+FIM_SE
 FIM
 ```
 
