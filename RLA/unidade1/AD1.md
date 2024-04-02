@@ -413,7 +413,7 @@ I --LOOP--> E
 
 #### Pseudocódigo (2 pontos)
 
-```java
+```
 ALGORITMO GeraFibonacci
 DECLARE n, a, b, termo_atual: INTEIRO
 INICIO
@@ -476,8 +476,20 @@ E --> W
 
 ```
 Algoritmo InverteInteiro
+DECLARE num, num_inv, digito: INTEIRO
 INICIO
-...
+ESCREVA "Digite o número a ser invertido:"
+LEIA num
+SE num < 0 ENTAO
+	ESCREVA "O número deve ser positivo!"
+SENAO
+	num_inv <- 0
+ENQUANTO num > 0 FAÇA
+	digito <- num % 10
+	num_inv <- (num_inv * 10) + digito
+	num <- num // 10
+	ESCREVA "Número invertido:", num_inv
+FIM_SE
 FIM
 ```
 
