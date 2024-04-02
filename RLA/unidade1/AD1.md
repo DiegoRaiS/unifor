@@ -230,14 +230,14 @@ DECLARE n INTEIRO
 ESCREVA "Digite a quantidade de números: "
 LEIA n
 SE n >= 0
-	DECLARE soma = 0
-	DECLARE i = 1
+	soma = 0
+	i = 1
 	LEIA n
 	SE i <= n
 		ESCREVA "Digite um número: "
-		DECLARE num
-		DECLARE soma = soma + num
-		DECLARE i = i + 1
+		num
+		soma = soma + num
+		i = i + 1
 		REPITA_SE
 	SENAO
 		ESCREVA "A soma dos números é: " soma
@@ -296,25 +296,20 @@ I --LOOP--> E
 
 #### Pseudocódigo (1 ponto)
 
-```
+```java
 Algoritmo SomaSerie
+DECLARE n,numerador,denominador: INTEIRO; termo, S: REAL
 INICIO
-ESCREVA "Digite o número de termos da série S: "
-DECLARE n INTEIRO
-DECLARE S = 0
-DECLARE i = 0 ATE n PASSO 1
-LEIA i
-PARA i > n
-	ESCREVA "Soma da série S é " S"
-	FIM_Algoritmo_SomaSerie
-PARA i = 0, 1, 2, 3, ... n
-	DECLARE numerador = 2 * i + 1
-	DECLARE denominador = 2 * i + 2
-	DECLARE termo = numerador / denominador
-	DECLARE S += termo
-	REPITA_PARA
-FIM_Algoritmo_SomaSerie
-...
+ESCREVA "Digite o número de termos da série S:"
+LEIA n
+S <- 0
+PARA i de 0 ATÉ n-1 PASSO 1 FAÇA
+	numerador = 2 * i + 1
+	denominador <- 2 * i + 2
+	termo = numerador / denominador
+	S += termo
+FIM_PARA
+ESCREVA "Soma da série S é ", S
 FIM
 ```
 
