@@ -55,22 +55,43 @@ Calcule a média de quatro números inteiros dados.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{"Digite o número 1:"}}
+B --> C[/num1/]
+C --> D{{"Digite o número 2:"}}
+D --> E[/num2/]
+E --> F{{"Digite o número 3:"}}
+F --> G[/num3/]
+G --> H{{"Digite o número 2:"}}
+H --> I[/num4/]
+I --> J["media = (num1 + num2 + num3 + num4)/4"]
+J --> K{{A média é, media}}
+K --> L([FIM]) 
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo Media
-FIM_ALGORITMO
+ALGORTIMO Media
+DECLARE num1, num2, num3, num4: REAL
+INICIO
+ESCREVA "Digite o número 1:"
+LEIA num1
+ESCREVA "Digite o número 2:"
+LEIA num2
+ESCREVA "Digite o número 3:"
+LEIA num3
+ESCREVA "Digite o número 4:"
+LEIA num4
+media <- (num1 + num2 + num3 + num4)/4
+ESCREVA "A média é", media
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| num1 | num2 | num3 | num4 | saída | 
+| --   | --   | --   | --   | --    | 
+| 0.25 | 0.25 | 2.50 | 1.00 | 1.00  | 
 
 ### Exercício 02 (2.5 pontos)
 Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (F). (Fórmula de conversão: F = (9/5) * C + 32)
